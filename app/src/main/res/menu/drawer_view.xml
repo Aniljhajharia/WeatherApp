@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+
+    >
+    <group android:checkableBehavior="single"
+        android:id="@+id/id">
+    <item
+        android:title="Select country"
+        android:id="@+id/country"
+        />
+        <item
+            android:title="         country"
+            android:id="@+id/country_select"
+            />
+
+            <item
+                android:id="@+id/business"
+                android:title="      Business news"
+                android:iconTint="#00f"/>
+            <item
+                android:id="@+id/entertainment"
+                android:title="      Entertainment news"
+                />
+
+            <item
+                android:id="@+id/health"
+
+                android:title="      health news" />
+            <item
+                android:id="@+id/science"
+
+                android:title="      Science news" />
+            <item
+                android:id="@+id/sports"
+
+                android:title="      Sports news" />
+            <item
+                android:id="@+id/technology"
+
+                android:title="      Technology news" />
+
+
+
+
+        <item
+            android:id="@+id/weather"
+
+            android:title="Weather news" />
+
+        <item
+            android:id="@+id/about"
+
+            android:title="about us" />
+
+    </group>
+
+
+</menu>

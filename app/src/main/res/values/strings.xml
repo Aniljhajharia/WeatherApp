@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">Weather And News App</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="facebook_app_id">201145093920347</string>
+    <string-array name="countries_array">
+        <item>India,UP</item>
+        <item>India,rajsthan</item>
+        <item>India,delhi
+        </item>
+        <item>India,jaipur</item>
+        <item>India,punjab</item>
+        <item>Srilanka</item>
+        <item>Bangladesh</item>
+        <item>United States</item>
+        <item>Nepal</item>
+
+    </string-array>
+    <string-array name="countrie">
+        <item>India-in</item>
+        <item>Argentina-ar</item>
+        <item>Brazil-br</item>
+        <item>Canada-ca</item>
+        <item>Colombia-co</item>
+        <item>France-fr</item>
+        <item>Greece-gr</item>
+        <item>Australia-au</item>
+        <item>Belgium-be</item>
+        <item>Bulgaria-bg</item>
+        <item>China-cn</item>
+        <item>Cuba-cu</item>
+        <item>Egypt-eg</item>
+        <item>Germany-de</item>
+        <item>hong-kong-hk</item>
+        <item>Hungry-hu</item>
+        <item>Singapore-sg</item>
+        <item>Russia-ru</item>
+        <item>UAE-ae</item>
+        <item>UK-gb</item>
+        <item>United-Satates-us</item>
+        <item>Japan-jp</item>
+
+    </string-array>
+</resources>

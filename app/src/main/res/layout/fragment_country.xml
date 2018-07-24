@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".News.Country"
+    android:orientation="vertical"
+    android:background="#000"
+    >
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Get News in A Instant"
+    android:gravity="center"
+    android:textSize="@dimen/splash_text_size"
+    android:textColor="#fff"
+    />
+   <AutoCompleteTextView
+       android:id="@+id/cont"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:hint="Enter Country"
+       android:textColorHint="#fff"
+       android:gravity="center"
+       android:layout_marginTop="@dimen/splash_text_size"
+       android:defaultFocusHighlightEnabled="true"
+       android:textColor="#fff"
+       ></AutoCompleteTextView>
+<Button
+    android:id="@+id/getnews"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textColor="#fff"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:background="@drawable/round5"
+    android:text="Get News"/>
+</LinearLayout>
