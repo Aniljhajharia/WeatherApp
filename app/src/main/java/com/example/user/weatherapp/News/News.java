@@ -46,9 +46,6 @@ public class News extends BaseFragment {
     private RecyclerView.LayoutManager layoutManager;
     MyPojo2 myPojo2;
     String category, coo;
-    Bundle bundle, bundle2;
-    String code_con;
-    String country;
 
     public News() {
     }
@@ -65,23 +62,17 @@ public class News extends BaseFragment {
         super.onViewCreated(view, savedInstanceState);
         recyclerView = (ShimmerRecyclerView) view.findViewById(R.id.my_recycler_view);
         SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
-        //int defaultValue = getResources().getInteger(R.integer.saved_high_score_default_key);
         String country = sharedPref.getString("country", null);
-        //country = sharedPreferences.getString("country", "default value");
-        if(country!=null)
-        coo = country.substring(country.length() - 2, country.length());
-//       String value[] = bundle.getStringArray("code");
-        //    Log.d("TAG", "value" + value[0]);
-        //  coo=category.substring(category.length() - 2, category.length());
-
+        if (country != null)
+            coo = country.substring(country.length() - 2, country.length());
     }
 
-    public void setdata(String cat,String cc) {
-
-        /*bundle = this.getArguments();
-        category = bundle.getString("key");
-        code_con = category.substring(category.length() - 2, category.length());*/
-
+    /**
+     * function to display news according category and country
+     * @param cat
+     * @param cc
+     */
+    public void setdata(String cat, String cc) {
 
         ApiClient2 apiClient2 = new ApiClient2();
         Retrofit retrofit = apiClient2.getClient();
@@ -112,7 +103,7 @@ public class News extends BaseFragment {
                 }
 
                 try {
-                    mAdapter = new Custom_adaptor(getContext().getApplicationContext(), Title, description, urls, images,News.this);
+                    mAdapter = new Custom_adaptor(getContext().getApplicationContext(), Title, description, urls, images, News.this);
                     recyclerView.setAdapter(mAdapter);
                 } catch (Exception e) {
 

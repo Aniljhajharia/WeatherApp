@@ -42,7 +42,9 @@ public class MainActivity extends BaseActivity {
         actionbar.setHomeAsUpIndicator(R.drawable.ic_dehaze_black_24dp);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         final NavigationView navigationView = findViewById(R.id.nav_view);
-
+/**
+ * used to select the items from navigation view and perform action on click
+ */
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -126,6 +128,11 @@ public class MainActivity extends BaseActivity {
         changefragment(new Home_page());
     }
 
+    /**
+     * on home click open navigation drawer
+     * @param item
+     * @return
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {

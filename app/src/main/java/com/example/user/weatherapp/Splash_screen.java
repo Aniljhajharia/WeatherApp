@@ -50,6 +50,9 @@ public class Splash_screen extends AppCompatActivity {
         long animationDuration = 3000; // Animation duration in ms
         ValueAnimator animator = ValueAnimator.ofFloat(startSize, endSize);
         animator.setDuration(animationDuration);
+        /**
+         * animator to animate text on splash screen
+         */
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
@@ -61,6 +64,9 @@ public class Splash_screen extends AppCompatActivity {
         });
 
         animator.start();
+        /**
+         * handler to start splash screen
+         */
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

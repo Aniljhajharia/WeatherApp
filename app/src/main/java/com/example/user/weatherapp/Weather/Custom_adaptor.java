@@ -88,6 +88,9 @@ public class Custom_adaptor extends RecyclerView.Adapter<Custom_adaptor.ViewHold
         holder.txtfoot.setText(mydesc);
         Glide.with(mcontext).load(mimag)
                 .into(holder.imageView);
+        /**
+         * used to load image using url
+         */
         holder.ur.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -97,7 +100,9 @@ public class Custom_adaptor extends RecyclerView.Adapter<Custom_adaptor.ViewHold
 
             }
         });
-
+/**
+ * for sharing news on facebook
+ */
         holder.share_fb.setOnClickListener(new View.OnClickListener() {
            @Override
             public void onClick(View v) {
@@ -127,18 +132,11 @@ public class Custom_adaptor extends RecyclerView.Adapter<Custom_adaptor.ViewHold
                fragment.getActivity().startActivity(shareIntent);
 
 
-              /*  ShareDialog shareDialog = new ShareDialog(fragment);
-                if (ShareDialog.canShow(ShareLinkContent.class)) {
-                    ShareLinkContent linkContent = new ShareLinkContent.Builder()
-                            .setContentUrl(Uri.parse(urll))
-                            .build();
-                    shareDialog.show(linkContent);
-
-
-                }*/
-
             }
         });
+        /**
+         * for sharing news on twitter
+         */
         holder.twitter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -158,6 +156,9 @@ public class Custom_adaptor extends RecyclerView.Adapter<Custom_adaptor.ViewHold
                 fragment.getActivity().startActivity(intent);
             }
         });
+        /**
+         * for sharing news on common apps
+         */
         holder.share_common.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

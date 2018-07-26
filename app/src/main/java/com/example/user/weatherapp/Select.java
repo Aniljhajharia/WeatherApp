@@ -64,11 +64,8 @@ News news=new News();
                 editor.putString("country", con);
                 editor.commit();
                 SharedPreferences sharedPref6 = getActivity().getPreferences(Context.MODE_PRIVATE);
-                //int defaultValue = getResources().getInteger(R.integer.saved_high_score_default_key);
                 String country6 = sharedPref6.getString("country", null);
-                //country = sharedPreferences.getString("country", "default value");
                 con = country6.substring(country6.length() - 2, country6.length());
-                //((MainActivity) getActivity()).bundle(news,cat);
                 ((MainActivity) getActivity()).changefragment(news);
                  news.setdata("sports",con);
 

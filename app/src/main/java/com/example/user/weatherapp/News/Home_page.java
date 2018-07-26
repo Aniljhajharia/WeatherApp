@@ -67,6 +67,9 @@ public class Home_page extends BaseFragment {
         super.onViewCreated(view, savedInstanceState);
         tv1 = (TextView) view.findViewById(R.id.home_2_head);
         tv2 = (TextView) view.findViewById(R.id.home_3_head);
+        /**
+         * Api call for fetching weather of random place on home page
+         */
         ApiClient apiClient = new ApiClient();
         Retrofit retrofit = apiClient.getClient();
         String q = "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text=\"india, delhi\")";
@@ -104,7 +107,9 @@ public class Home_page extends BaseFragment {
 
         recyclerView1 = (ShimmerRecyclerView) view.findViewById(R.id.home_page_news);
         bundle = this.getArguments();
-
+/**
+ * Api call to fetch news of random place
+ */
         ApiClient2 apiClient2 = new ApiClient2();
         Retrofit retrofit2 = apiClient2.getClient();
         ApiInterface api2 = retrofit2.create(ApiInterface.class);
@@ -132,7 +137,7 @@ public class Home_page extends BaseFragment {
                     images.add(list.get(i).getUrlToImage());
                 }
                 try {
-                    mAdapter = new Custom_adaptor(getContext().getApplicationContext(), Title, description, urls, images,Home_page.this);
+                    mAdapter = new Custom_adaptor(getContext().getApplicationContext(), Title, description, urls, images, Home_page.this);
                     recyclerView1.setAdapter(mAdapter);
                 } catch (Exception e) {
 

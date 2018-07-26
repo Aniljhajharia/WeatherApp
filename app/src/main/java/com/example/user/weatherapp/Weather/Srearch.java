@@ -67,6 +67,9 @@ public class Srearch extends BaseFragment {
             }
         });
         animator.start();
+        /**
+         * used to enter details of location to fetch weather info. and view weather of selected location
+         */
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

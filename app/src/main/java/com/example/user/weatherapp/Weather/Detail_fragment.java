@@ -48,14 +48,9 @@ public class Detail_fragment extends Fragment {
         // Required empty public constructor
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        // if (getArguments() != null) {
-
-        //}
 
         return inflater.inflate(R.layout.fragment_detail_fragment, container, false);
     }
@@ -71,9 +66,10 @@ public class Detail_fragment extends Fragment {
         tv5 = (TextView) view.findViewById(R.id.humi1);
         tv6 = (TextView) view.findViewById(R.id.condition);
         tv7 = (TextView) view.findViewById(R.id.temp1);
-
-        //String text="nome,ak";
         bundle = this.getArguments();
+        /**
+         * fetch details of place entered by user and show news of selected place
+         */
         if (bundle != null) {
             cntry = bundle.getString("key", "india");
         }
@@ -95,6 +91,9 @@ public class Detail_fragment extends Fragment {
             q = "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text=\"Bangladesh,dhaka\")";
         if (cntry.equals("Nepal"))
             q = "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text=\"nepal,Kathmandu\")";
+        /**
+         * Api call to fetch response from api..
+         */
         ApiClient apiClient = new ApiClient();
         Retrofit retrofit = apiClient.getClient();
         ApiInterface api = retrofit.create(ApiInterface.class);
@@ -108,13 +107,11 @@ public class Detail_fragment extends Fragment {
                     tv1.setText("Please select region");
                 }
                 Log.d("TAG", "response" + myPojo);
-//                Log.d("TAG",myPojo.getQuery().getResults().getChannel().getLocation().getCountry());
                 try {
                     Toast.makeText(getContext(), "cntry" + cntry, Toast.LENGTH_SHORT).show();
                 } catch (Exception e) {
 
                 }
-                // uri=Uri.parse(myPojo.getQuery().getResults().getChannel().getImage().getUrl());
                 try {
                     tv1.setText(myPojo.getQuery().getResults().getChannel().getLocation().getCountry() + ",  " + myPojo.getQuery().getResults().getChannel().getLocation().getCity());
                     tv4.setText("Wind Speed::" + myPojo.getQuery().getResults().getChannel().getWind().getSpeed() + " mph");
@@ -128,15 +125,11 @@ public class Detail_fragment extends Fragment {
                     String[] value = {myPojo.getQuery().getResults().getChannel().getItem().getCondition().getTemp(), myPojo.getQuery().getResults().getChannel().getItem().getCondition().getText()};
                     bundle.putStringArray("value", value);
                     home_page.setArguments(bundle);
-                    //Log.d("tag",query.getResults().getChannel().getLanguage());
-                    // if(cntry.equals(myPojo.getQuery().getResults().getChannel().getLocation().getCountry()));
-                    // {
                     humidity = myPojo.getQuery().getResults().getChannel().getAtmosphere().getHumidity();
                     Log.d("TAG", "humi" + humidity);
                 } catch (Exception e) {
 
                 }
-                //}
             }
 
             @Override

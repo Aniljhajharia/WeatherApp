@@ -11,7 +11,10 @@ import com.example.user.weatherapp.R;
 
 public class BaseActivity extends AppCompatActivity {
 
-
+    /**
+     * Common method used to fragment transaction while adding fragment to back stack
+     * @param fragment
+     */
     public void changefragment(BaseFragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -19,16 +22,16 @@ public class BaseActivity extends AppCompatActivity {
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
+
+    /**
+     * Common method used to fragment transaction without adding fragment to back stack
+     * @param fragment
+     */
     public void changefragment2(BaseFragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.main, fragment);
         fragmentTransaction.commit();
-    }
-    public void bundle(BaseFragment fragment, String tag) {
-        Bundle bundle = new Bundle();
-        bundle.putString("key", tag);
-        fragment.setArguments(bundle);
     }
 
     /**
